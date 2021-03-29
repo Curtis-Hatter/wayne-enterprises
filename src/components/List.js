@@ -81,8 +81,12 @@ class List extends Component{
       // console.log(result.results[0].name.first);
       // console.log(result.results[0].dob.age);
       // console.log(result.results[0].email);
-   });
-  }
+      });
+   }
+
+   SortInfo(value){
+      console.log(value.currentTarget.innerHTML);
+   }
 
   renderTableData() {
     return this.state.employees.map((employee, index) => {
@@ -99,9 +103,10 @@ class List extends Component{
  }
 
  renderTableHeader() {
+   //  console.log("clicked")
   let header = Object.keys(this.state.employees[0])
   return header.map((key, index) => {
-     return <th key={index}>{key.toUpperCase()}</th>
+     return <th key={index} onClick={this.SortInfo.bind(this)}>{key.toUpperCase()}</th>
   })
 }
 
