@@ -1,11 +1,13 @@
 #title {
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: batman;
+    font-weight: bolder;
   }
   
   #list {
     text-align: center;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     border-collapse: collapse;
     border: 3px solid #ddd;
     width: 100%;
@@ -17,8 +19,9 @@
   }
   
   #list tr:nth-child(even){background-color: #f2f2f2;}
+  #list tr:nth-child(odd){background-color: #ffffff;}
   
-  #list tr:hover {background-color: rgb(149, 252, 118);}
+  #list tr:hover {background-color: rgba(255, 255, 255, 0.555);}
   
   #list th {
     padding-top: 12px;
@@ -45,12 +48,15 @@ h1{
 }
 
 .margin button{
-  margin-left: 1em;
+  /* margin-left: 1em; */
   margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 .batman{
   text-align: center;
   font-family: Batman;
+  font-weight: bolder;
+  color: black;
 }
 

@@ -1,0 +1,8 @@
+.wayne{
+    background-image: url("./Wayne-enterprises-logo-large.png");
+    background-repeat: no-repeat;
+    /* height: 50%; */
+    /* max-width: 70%; */
+  background-attachment: fixed;
+  background-position: center top;
+}

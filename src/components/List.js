@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./List.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./fonts/batmfa__.ttf";
+import Comparison from "./Comparison";
 
 // import "./fonts/thumb-1920-790645.jpg"
 
@@ -24,10 +25,10 @@ class List extends Component{
      super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
      this.state = { //state is by default an object
         employees: [
-           { id: "008f319e3c636b8e", name: 'Wasif', age: 21, email: 'wasif.asmil@example.com' },
-           { id: "6bd0cab9d7a9c057", name: 'Rudder', age: 19, email: 'rudder.rudd@example.com' },
-           { id: "8e0d36e61ce3fc7a", name: 'Sad', age: 16, email: 'sad.greatpain@example.com' },
-           { id: "177bb39f3ee245bd", name: 'Wubba', age: 25, email: 'wubba.lubba@example.com' }
+           { id: "008f319e3c636b8e", name: 'Wasif', age: 21, email: 'wasif.asmil@example.com', Want_Benefits: 0},
+           { id: "6bd0cab9d7a9c057", name: 'Ol Mama', age: 49, email: 'simplywants.tofeedchildren@example.com', Want_Benefits: 1},
+           { id: "8e0d36e61ce3fc7a", name: 'Sad', age: 16, email: 'sad.greatpain@example.com', Want_Benefits: 0},
+           { id: "177bb39f3ee245bd", name: 'Wubba', age: 25, email: 'wubba.lubba@example.com', Want_Benefits: 1}
         ]
      }
   }
@@ -39,22 +40,31 @@ class List extends Component{
 //      .catch(err => console.log(err));
 //  };
 
-//   componentDidMount(){
-//      fetch("https://randomuser.me/api/")
-//       .then(res => res.json())
-//       .then(result =>{
-//          // this.setState({
-//          // })
-//          // console.log(result);
-//          // console.log(result.results[0].cell);
-//          this.setState({
-//             employees: [{id: result.info.seed, name: result.results[0].name.first, age: result.results[0].dob.age, email:result.results[0].email}]
-//          })
-//          // console.log(result.results[0].name.first);
-//          // console.log(result.results[0].dob.age);
-//          // console.log(result.results[0].email);
-//       });
-//   }
+  componentDidMount(){
+   alert("WELCOME TO WAYNE ENTERPRISES");
+   alert("To Sort your Employees by column, click on the column headers. There are also footers that you can click on to fire the employees that want benefits.");
+   alert("And after firing those pesky freeloaders, you can simply add more employees by clicking on the 'ADD EMPLOYEES' button.")
+     for(let i =0; i<11; i++){
+     fetch("https://randomuser.me/api/")
+      .then(res => res.json())
+      .then(result =>{
+         let newEmployees = this.state.employees;
+      // this.setState({
+      //    students: [{id: result.info.seed, name: result.results[0].name.first, age: result.results[0].dob.age, email:result.results[0].email}]
+      // })
+      // console.log(state.students)
+      // employees = (this.state.students);
+         newEmployees.push({id: result.info.seed, name: result.results[0].name.first, age: result.results[0].dob.age, email:result.results[0].email, Want_Benefits: Math.floor(Math.random()*2)});
+      
+         this.setState({
+            employees: newEmployees
+         })
+         // console.log(result.results[0].name.first);
+         // console.log(result.results[0].dob.age);
+         // console.log(result.results[0].email);
+      });
+   }
+  }
 
   AddEmployee(){
    // console.log(this.state.students)
@@ -67,10 +77,10 @@ class List extends Component{
       // })
       // console.log(state.students)
       // employees = (this.state.students);
-      newEmployees.push({id: result.info.seed, name: result.results[0].name.first, age: result.results[0].dob.age, email:result.results[0].email});
+      newEmployees.push({id: result.info.seed, name: result.results[0].name.first, age: result.results[0].dob.age, email:result.results[0].email, Want_Benefits: Math.floor(Math.random()*2)});
       
       this.setState({
-         students: newEmployees
+         employees: newEmployees
       })
       // console.log(result);
       // console.log(result.results[0].cell);
@@ -84,19 +94,78 @@ class List extends Component{
       });
    }
 
+   //SORT INFORMATION
    SortInfo(value){
-      console.log(value.currentTarget.innerHTML);
+      // console.log(value.currentTarget.innerHTML);
+      let sortedEmployees = this.state.employees;
+      switch(value.currentTarget.innerHTML) {
+         case "ID":
+            // console.log(sortedEmployees.sort(Comparison("id")));
+            this.setState({
+               employees: sortedEmployees.sort(Comparison("id"))
+            })
+           break;
+         case "NAME":  
+            // console.log(sortedEmployees.sort(Comparison("name")));
+            this.setState({
+               employees: sortedEmployees.sort(Comparison("name"))
+            })
+           break;
+         case "AGE":
+            // console.log(sortedEmployees.sort(Comparison("age")));
+            this.setState({
+               employees: sortedEmployees.sort(Comparison("age"))
+            })
+           break;
+           case "EMAIL":
+            // console.log(sortedEmployees.sort(Comparison("age")));
+            this.setState({
+               employees: sortedEmployees.sort(Comparison("email"))
+            })
+           break;  
+         default:
+         //   console.log(sortedEmployees.sort(Comparison("email")));
+           this.setState({
+            employees: sortedEmployees.sort(Comparison("Want_Benefits"))
+         })
+       }
+   }
+   //FILTER THE EMPLOYEES ON STRIKE
+   FilterInfo(value){
+      // console.log("clicked");
+      // console.log(value.currentTarget.innerHTML);
+      let filteredEmployees = [];
+      if(value.currentTarget.innerHTML === "WANT_BENEFITS"){
+         // console.log(value.currentTarget.innerHTML);
+         this.state.employees.forEach(employee => {
+            if(!employee.Want_Benefits)
+            {
+               filteredEmployees.push(employee);
+            }
+         });
+         // console.log(filteredEmployees);
+         this.setState({
+            employees: filteredEmployees
+         })
+      }
+      else{
+         alert("Bruce, you know this one.");
+         alert("Fire the troublesome Employees that are on strike by CLICKING on the 'WANT_BENEFITS' tab on the bottom right.");
+      }
+      // let sortedEmployees = this.state.employees;
    }
 
+   //RENDER DATA ONTO FANCY TABLE
   renderTableData() {
     return this.state.employees.map((employee, index) => {
-       const { id, name, age, email } = employee //destructuring
+       const { id, name, age, email, Want_Benefits } = employee //destructuring
        return (
           <tr key={id}>
              <td>{id}</td>
              <td>{name}</td>
              <td>{age}</td>
              <td>{email}</td>
+             <td>{Want_Benefits}</td>
           </tr>
        )
     })
@@ -110,7 +179,16 @@ class List extends Component{
   })
 }
 
+renderTableFooter() {
+   //  console.log("clicked")
+  let header = Object.keys(this.state.employees[0])
+  return header.map((key, index) => {
+     return <th key={index} onClick={this.FilterInfo.bind(this)}>{key.toUpperCase()}</th>
+  })
+}
+
   render() { //Whenever our class runs, render method will be called automatically, it may have already defined in the constructor behind the scene.
+   
      return (
        
         <div className="container margin" >
@@ -119,6 +197,7 @@ class List extends Component{
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>
                   {this.renderTableData()}
+                  <tr>{this.renderTableFooter()}</tr>
                </tbody>
             </table>
             <div className="row text-center">
