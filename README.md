@@ -14,7 +14,7 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 
 ## Images
 
-![Wayne Enterprises](public\Wayne-enterprises-logo-large.png)
+![Wayne Enterprises](./public/Wayne-enterprises-logo-large.png)
 
 ![Wayne Enterprises Employees Sorted](wayneEmployees.png)
 
