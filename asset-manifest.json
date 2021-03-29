@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/wayne-enterprises/static/css/main.e5f94015.chunk.css",
+    "main.js": "/wayne-enterprises/static/js/main.cc92e3f1.chunk.js",
+    "main.js.map": "/wayne-enterprises/static/js/main.cc92e3f1.chunk.js.map",
+    "runtime-main.js": "/wayne-enterprises/static/js/runtime-main.ef96af87.js",
+    "runtime-main.js.map": "/wayne-enterprises/static/js/runtime-main.ef96af87.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/wayne-enterprises/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.bfcec3bd.chunk.js": "/wayne-enterprises/static/js/2.bfcec3bd.chunk.js",
+    "static/js/2.bfcec3bd.chunk.js.map": "/wayne-enterprises/static/js/2.bfcec3bd.chunk.js.map",
+    "index.html": "/wayne-enterprises/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/wayne-enterprises/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.e5f94015.chunk.css.map": "/wayne-enterprises/static/css/main.e5f94015.chunk.css.map",
+    "static/js/2.bfcec3bd.chunk.js.LICENSE.txt": "/wayne-enterprises/static/js/2.bfcec3bd.chunk.js.LICENSE.txt",
+    "static/media/List.css": "/wayne-enterprises/static/media/batmfa__.83168830.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef96af87.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.bfcec3bd.chunk.js",
+    "static/css/main.e5f94015.chunk.css",
+    "static/js/main.cc92e3f1.chunk.js"
+  ]
+}
