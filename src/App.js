@@ -1,8 +1,8 @@
 import React from "react";
-import Students from "./components/List";
+import List from "./components/List";
 
 function App() {
-  return <Students />;
+  return <List />;
 }
 
 export default App;

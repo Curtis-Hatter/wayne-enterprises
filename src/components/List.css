@@ -18,12 +18,39 @@
   
   #list tr:nth-child(even){background-color: #f2f2f2;}
   
-  #list tr:hover {background-color: #ddd;}
+  #list tr:hover {background-color: rgb(149, 252, 118);}
   
   #list th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
   }
+
+@font-face {
+  font-family: "Batman";
+  src: local("Batman"),
+    url(./fonts/batmfa__.ttf) format("truetype");
+  font-weight: normal;
+}
+
+h1{
+  text-align: center;
+  font-family: Batman;
+}
+
+.margin{
+  margin-top: 2em;
+}
+
+.margin button{
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.batman{
+  text-align: center;
+  font-family: Batman;
+}
+
