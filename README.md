@@ -1,5 +1,10 @@
 # Employee Directory Using React
 
+# Links
+https://curtis-hatter.github.io/wayne-enterprises/
+https://github.com/Curtis-Hatter/wayne-enterprises
+
+
 ## Overview
 
 You are Bruce Wayne waking up from a long night of crime fighting. Alfred has awoken you to let you know that you're needed to check out the employee directory and filter your employees for information. You, being the genius that you are, have already created an application that can sort through your employees and fire... I mean filter the freeloarders and add more employees to keep your company up and running.
