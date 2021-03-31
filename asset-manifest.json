@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wayne-enterprises/static/css/main.e5f94015.chunk.css",
-    "main.js": "/wayne-enterprises/static/js/main.d39972b5.chunk.js",
-    "main.js.map": "/wayne-enterprises/static/js/main.d39972b5.chunk.js.map",
+    "main.js": "/wayne-enterprises/static/js/main.d13a30f7.chunk.js",
+    "main.js.map": "/wayne-enterprises/static/js/main.d13a30f7.chunk.js.map",
     "runtime-main.js": "/wayne-enterprises/static/js/runtime-main.ef96af87.js",
     "runtime-main.js.map": "/wayne-enterprises/static/js/runtime-main.ef96af87.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/wayne-enterprises/static/css/2.4c97ca4f.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.bfcec3bd.chunk.js",
     "static/css/main.e5f94015.chunk.css",
-    "static/js/main.d39972b5.chunk.js"
+    "static/js/main.d13a30f7.chunk.js"
   ]
 }
